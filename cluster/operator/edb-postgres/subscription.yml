@@ -5,3 +5,10 @@ metadata:
    operators.coreos.com/cloud-native-postgresql.openshift-operators: ""
    name: cloud-native-postgresql
    namespace: openshift-operators
+spec:
+  channel: stable-v1.20
+  installPlanApproval: Automatic
+  name: cloud-native-postgresql
+  source: certified-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: cloud-native-postgresql.v1.20.2
