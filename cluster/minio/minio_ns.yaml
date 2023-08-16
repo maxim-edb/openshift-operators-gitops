@@ -3,5 +3,4 @@ kind: Namespace
 metadata:
   name: minio
   labels:
-    name: minio
     argocd.argoproj.io/managed-by=openshift-gitops
