@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+  labels:
+    app: minio
+  name: minio
+  namespace: minio
+spec:
+  containers:
+  - args:
+    - minio server /data --console-address :9090
+    command:
+    - /bin/bash
+    - -c
+    image: quay.io/minio/minio:latest
+    imagePullPolicy: Always
+    name: minio
+    ports:
+    - containerPort: 9090
+      name: console
+      protocol: TCP
+    - containerPort: 9000
+      name: client
+      protocol: TCP
+    resources: {}
+    volumeMounts:
+    - mountPath: /data
+      name: minio-volume
+  volumes:
+  - name: minio-volume
+    persistentVolumeClaim:
+      claimName: minio-volume-pvc
