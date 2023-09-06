@@ -4,7 +4,7 @@ metadata:
   name: minio-client
   namespace: minio
 spec:
-  host: minio-client.apps-crc.testing
+  host: minio-client.sno.thuisnet.lan
   path: /
   port:
     targetPort: 9000
