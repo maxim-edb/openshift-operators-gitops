@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: minio-console
+  namespace: minio-tenant
+spec:
+  host: minio-console-minio-tenant.apps.sno.thuisnet.lan
+  port:
+    targetPort: https-console
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: minio-console
+    weight: 100
+  wildcardPolicy: None
