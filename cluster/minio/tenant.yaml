@@ -27,7 +27,7 @@ spec:
   externalCaCertSecret: [ ]
   externalCertSecret: [ ]
   externalClientCertSecrets: [ ]
-  image: quay.io/minio/minio:RELEASE.2023-07-21T21-12-44Z
+  image: quay.io/minio/minio:RELEASE.2023-09-04T19-57-37Z
   imagePullSecret: { }
   mountPath: /export
   subPath: ""
