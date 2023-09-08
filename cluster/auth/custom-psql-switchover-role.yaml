@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+  name: custom-psql-switchover-role
+rules:
+- apiGroups:
+  - postgresql.k8s.enterprisedb.io
+  resources:
+  - clusters/status
+  verbs:
+  - update
+  - patch
