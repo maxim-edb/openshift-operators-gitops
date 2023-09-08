@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: edbuser08
+  annotations:
+    openshift.io/requester: edbuser08
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin
+  namespace: edbuser08
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: edbuser08
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: edbuser08-promote
+  namespace: edbuser08
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: edbuser08
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: custom-psql-switchover-role
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: edbuser08-postgresql-admin
+  namespace: edbuser08
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: edbuser08
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: clusters.postgresql.k8s.enterprisedb.io-v1-admin
