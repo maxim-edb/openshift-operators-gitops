@@ -19,6 +19,9 @@ spec:
           - edbuser10
           - edbuser11
           - edbuser12
+          - edbuser13
+          - edbuser14
+          - edbuser15
       name: edbuser-postgres-logs
   outputDefaults:
     elasticsearch:
