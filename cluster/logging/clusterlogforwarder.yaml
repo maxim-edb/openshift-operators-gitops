@@ -1,0 +1,32 @@
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogForwarder
+metadata:
+  name: instance
+  namespace: openshift-logging
+spec:
+  inputs:
+    - application:
+        namespaces:
+          - edbuser01
+          - edbuser02
+          - edbuser03
+          - edbuser04
+          - edbuser05
+          - edbuser06
+          - edbuser07
+          - edbuser08
+          - edbuser09
+          - edbuser10
+          - edbuser11
+          - edbuser12
+      name: edbuser-postgres-logs
+  outputDefaults:
+    elasticsearch:
+      structuredTypeName: nologformat
+  pipelines:
+    - inputRefs:
+        - edbuser-postgres-logs
+      name: edbuser-postgres-logs
+      outputRefs:
+        - default
+      parse: json
