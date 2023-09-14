@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: edbuser08-postgresql-admin
+  namespace: edbuser08
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: edbuser08
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: clusters.postgresql.k8s.enterprisedb.io-v1-admin
