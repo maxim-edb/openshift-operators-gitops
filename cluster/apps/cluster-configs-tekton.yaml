@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cluster-configs
-  namespace: openshift-gitops
+  namespace: openshift-gitops-tekton
 spec:
   destination:
     namespace: default
@@ -11,6 +11,6 @@ spec:
   source:
     directory:
       recurse: true
-    path: cluster
+    path: cluster/tekton
     repoURL: https://github.com/maxim-edb/cluster-config.git
     targetRevision: dev
