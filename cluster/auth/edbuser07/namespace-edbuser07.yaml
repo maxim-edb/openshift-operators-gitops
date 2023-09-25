@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: edbuser07
-  annotations:
-    openshift.io/requester: edbuser07
