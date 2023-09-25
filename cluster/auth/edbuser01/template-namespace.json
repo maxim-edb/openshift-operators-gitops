@@ -1,0 +1,10 @@
+function(username) {
+  apiVersion: 'v1',
+  kind: 'Namespace',
+  metadata: {
+    name: username,
+    annotations: {
+      'openshift.io/requester': username,
+    },
+  },
+}
