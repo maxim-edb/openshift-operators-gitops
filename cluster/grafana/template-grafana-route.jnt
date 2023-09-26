@@ -6,7 +6,6 @@ function(username){
     namespace: username + '-tools',
   },
   spec: {
-    host: 'grafana-' + username,
     to: {
       kind: 'Service',
       name: 'grafana-' + username + '-tools-service',
