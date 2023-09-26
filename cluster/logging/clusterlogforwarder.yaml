@@ -6,22 +6,9 @@ metadata:
 spec:
   inputs:
     - application:
-        namespaces:
-          - edbuser01
-          - edbuser02
-          - edbuser03
-          - edbuser04
-          - edbuser05
-          - edbuser06
-          - edbuser07
-          - edbuser08
-          - edbuser09
-          - edbuser10
-          - edbuser11
-          - edbuser12
-          - edbuser13
-          - edbuser14
-          - edbuser15
+        selector:
+          matchLabels:
+            k8s.enterprisedb.io/podRole: instance
       name: edbuser-postgres-logs
   outputDefaults:
     elasticsearch:
