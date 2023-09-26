@@ -4,7 +4,6 @@ metadata:
   name: minio-client
   namespace: minio-tenant
 spec:
-  host: minio-client-minio-tenant.apps.sno.thuisnet.lan
   port:
     targetPort: https-minio
   tls:

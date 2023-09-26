@@ -4,7 +4,6 @@ metadata:
   name: minio-console
   namespace: minio-tenant
 spec:
-  host: minio-console-minio-tenant.apps.sno.thuisnet.lan
   port:
     targetPort: https-console
   tls:
