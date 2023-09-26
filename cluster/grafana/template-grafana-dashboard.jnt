@@ -2,7 +2,7 @@ function(username) {
   apiVersion: 'grafana.integreatly.org/v1beta1',
   kind: 'GrafanaDashboard',
   metadata: {
-    name: 'grafanadashboard-for-cnp-' + username + '-tools',
+    name: 'grafana-' + username + '-tools',
   },
   spec: {
     instanceSelector: {
