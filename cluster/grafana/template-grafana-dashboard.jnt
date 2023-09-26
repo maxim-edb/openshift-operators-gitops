@@ -3,6 +3,7 @@ function(username) {
   kind: 'GrafanaDashboard',
   metadata: {
     name: 'grafana-' + username + '-tools',
+    namespace: username + '-tools',
   },
   spec: {
     instanceSelector: {
