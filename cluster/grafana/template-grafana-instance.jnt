@@ -4,7 +4,7 @@ function(username){
   metadata: {
     labels: {
       dashboards: 'grafanadashboard-for-cnp-' + username + '-tools',
-      folders: 'grafana-' + username + 'tools',
+      folders: 'grafana-' + username + '-tools',
     },
     name: 'grafana-' + username + '-tools',
     namespace: username + '-tools',

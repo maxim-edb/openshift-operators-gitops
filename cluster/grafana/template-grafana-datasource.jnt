@@ -24,7 +24,7 @@ function(username) {
     },
     instanceSelector: {
       matchLabels: {
-        dashboards: 'grafana-edb-demo',  //
+        dashboards: 'grafana-' + username + '-tools',
       },
     },
   },
