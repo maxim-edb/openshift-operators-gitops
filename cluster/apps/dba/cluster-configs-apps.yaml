@@ -11,6 +11,6 @@ spec:
   source:
     directory:
       recurse: false
-    path: cluster/apps
+    path: cluster/apps/dba
     repoURL: https://github.com/maxim-edb/cluster-config.git
     targetRevision: dev
