@@ -1,3 +1,4 @@
+local backupSecretTemplate = import 'template-backup-secret.jnt';
 local namespaceTemplate = import 'template-namespace.jnt';
 local adminRoleBindingTemplate = import 'template-rolebinding-admin.jnt';
 local postgresAdminRoleBindingTemplate = import 'template-rolebinding-postgresql-admin.jnt';
@@ -8,6 +9,7 @@ local generateUserResources(username) = [
   adminRoleBindingTemplate(username),
   promoteRoleBindingTemplate(username),
   postgresAdminRoleBindingTemplate(username),
+  backupSecretTemplate(username),
 ];
 
 [
