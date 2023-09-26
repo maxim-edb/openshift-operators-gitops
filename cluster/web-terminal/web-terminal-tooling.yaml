@@ -3,7 +3,6 @@ kind: DevWorkspaceTemplate
 metadata:
   annotations:
     controller.devfile.io/allow-import-from: '*'
-  generation: 3
   labels:
     console.openshift.io/terminal: "true"
   name: web-terminal-tooling
