@@ -1,6 +1,7 @@
 local configmapTemplate = import 'template-grafana-configmap.jnt';
 local dashboardTemplate = import 'template-grafana-dashboard.jnt';
 local datasourceTemplate = import 'template-grafana-datasource.jnt';
+local grafanaInstance = import 'template-grafana-instance.jnt';
 local roleBindingTemplate = import 'template-grafana-rolebinding-cluster-monitoring.jnt';
 
 local generateUserResources(username) = [
@@ -8,6 +9,7 @@ local generateUserResources(username) = [
   dashboardTemplate(username),
   datasourceTemplate(username),
   roleBindingTemplate(username),
+  grafanaInstance(username),
 ];
 
 [
