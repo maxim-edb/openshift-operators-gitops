@@ -3,7 +3,7 @@ function(username){
   apiVersion: 'grafana.integreatly.org/v1beta1',
   metadata: {
     labels: {
-      dashboards: 'grafanadashboard-for-cnp-' + username + '-tools',
+      dashboards: 'grafana-' + username + '-tools',
       folders: 'grafana-' + username + '-tools',
     },
     name: 'grafana-' + username + '-tools',
