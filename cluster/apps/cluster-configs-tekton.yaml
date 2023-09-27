@@ -13,4 +13,4 @@ spec:
       recurse: true
     path: cluster/tekton
     repoURL: https://github.com/maxim-edb/cluster-config.git
-    targetRevision: dev
+    targetRevision: rosa
