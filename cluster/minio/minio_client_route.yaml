@@ -5,10 +5,7 @@ metadata:
   namespace: minio-tenant
 spec:
   port:
-    targetPort: https-minio
-  tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: passthrough
+    targetPort: http-minio
   to:
     kind: Service
     name: minio

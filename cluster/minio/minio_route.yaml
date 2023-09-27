@@ -5,10 +5,9 @@ metadata:
   namespace: minio-tenant
 spec:
   port:
-    targetPort: https-console
+    targetPort: http-console
   tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: passthrough
+    termination: edge
   to:
     kind: Service
     name: minio-console
