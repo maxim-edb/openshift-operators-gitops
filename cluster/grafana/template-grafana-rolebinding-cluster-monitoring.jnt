@@ -13,7 +13,7 @@ function(username) {
   subjects: [
     {
       kind: 'ServiceAccount',
-      name: 'grafana-' + username + '-sa',
+      name: 'grafana-' + username + '-tools-sa',
       namespace: username + '-tools',
     },
   ],
