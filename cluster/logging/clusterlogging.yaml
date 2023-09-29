@@ -25,7 +25,7 @@ spec:
           memory: 4Gi
       storage:
         size: 10G
-        storageClassName: lvms-local-lvm
+        storageClassName: crc-csi-hostpath-provisioner
     retentionPolicy:
       application:
         maxAge: 1d
