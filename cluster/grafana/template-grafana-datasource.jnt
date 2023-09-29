@@ -5,7 +5,7 @@ function(username) {
     name: 'prometheus-grafanadatasource-' + username,
     namespace: username + '-tools',
     annotations: {
-      argocd.argoproj.io/sync-wave: "30",
+      'argocd.argoproj.io/sync-wave': '30',
     },
   },
   spec: {
