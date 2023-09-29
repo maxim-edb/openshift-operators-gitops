@@ -9,8 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: false
     path: cluster/grafana
     repoURL: https://github.com/maxim-edb/cluster-config.git
     targetRevision: rosa
