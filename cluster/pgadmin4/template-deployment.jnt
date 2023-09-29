@@ -17,7 +17,7 @@ function(username) {
         containers: [
           {
             name: 'pgadmin4',
-            image: 'dpage/pgadmin4:latest',
+            image: 'quay.io/wzzrd/pgadmin4:latest',
             ports: [
               {
                 containerPort: 80,
