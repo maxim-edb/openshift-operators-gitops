@@ -6,21 +6,7 @@ function(username) {
     namespace: username + '-tools',
   },
   data: {
-    'servers.json': |||
-      {
-          "Servers": {
-            "1": {
-              "Name": "PostgreSQL DB",
-              "Group": "Servers",
-              "Port": 5432,
-              "Username": "postgres",
-              "Host": "complex-cluster-rw." + username + "svc.cluster.local",
-              "SSLMode": "prefer",
-              "MaintenanceDB": "postgres"
-            }
-          }
-      }
-
-    |||,
+    'servers.json':
+      std.format('{"Servers": {"1": {"Name": "PostgreSQL DB", "Group": "Servers", "Port": 5432, "Username": "postgres", "Host": "complex-cluster-rw.%s.svc.cluster.local", "SSLMode": "prefer", "MaintenanceDB": "postgres"}}}', [username]),
   },
 }
