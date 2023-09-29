@@ -25,7 +25,7 @@ spec:
           memory: 4Gi
       storage:
         size: 10G
-        storageClassName: gp3
+        storageClassName: lvms-local-lvm
     retentionPolicy:
       application:
         maxAge: 1d
