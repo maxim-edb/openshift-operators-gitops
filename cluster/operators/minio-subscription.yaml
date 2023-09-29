@@ -3,10 +3,12 @@ kind: Subscription
 metadata:
   name: minio
   namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: stable
   installPlanApproval: Automatic
   name: minio-operator
   source: certified-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: minio-operator.v5.0.7
+  startingCSV: minio-operator.v5.0.9

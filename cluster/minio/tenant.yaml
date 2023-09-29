@@ -5,6 +5,8 @@ metadata:
   namespace: minio-tenant
   labels:
     app: minio
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   features:
     bucketDNS: false

@@ -13,4 +13,6 @@ spec:
       recurse: true
     path: cluster/monitoring
     repoURL: https://github.com/maxim-edb/cluster-config.git
-    targetRevision: dev
+    targetRevision: rosa
+  syncPolicy:
+    automated: {}

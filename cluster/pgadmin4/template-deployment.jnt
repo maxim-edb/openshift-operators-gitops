@@ -1,0 +1,76 @@
+function(username) {
+  apiVersion: 'apps.openshift.io/v1',
+  kind: 'DeploymentConfig',
+  metadata: {
+    name: 'pgadmin4',
+    namespace: username + '-tools',
+  },
+  spec: {
+    replicas: 1,
+    template: {
+      metadata: {
+        labels: {
+          app: 'pgadmin4',
+        },
+      },
+      spec: {
+        containers: [
+          {
+            name: 'pgadmin4',
+            image: 'quay.io/wzzrd/pgadmin4:latest',
+            ports: [
+              {
+                containerPort: 80,
+              },
+            ],
+            env: [
+              {
+                name: 'PGADMIN_DEFAULT_EMAIL',
+                value: 'maxim@enterprisedb.com',
+              },
+              {
+                name: 'PGADMIN_DEFAULT_PASSWORD',
+                valueFrom: {
+                  secretKeyRef: {
+                    name: 'pgadmin',
+                    key: 'pgadmin-password',
+                  },
+                },
+              },
+            ],
+            volumeMounts: [
+              {
+                mountPath: '/var/lib/pgadmin',
+                name: 'pgadmin4-' + username + '-tools-volume',
+              },
+              {
+                name: 'pgadmin-config',
+                mountPath: '/pgadmin4/servers.json',
+                subPath: 'servers.json',
+                readOnly: true,
+              },
+            ],
+          },
+        ],
+        securityContext: {
+          runAsUser: 1001,
+          fsGroup: 1001,
+        },
+        volumes: [
+          {
+            name: 'pgadmin4-' + username + '-tools-volume',
+            persistentVolumeClaim: {
+              claimName: 'pgadmin4-' + username + '-tools-pvc',
+            },
+          },
+          {
+            name: 'pgadmin-config',
+            configMap: {
+              name: 'pgadmin-config',
+            },
+          },
+        ],
+      },
+    },
+  },
+}

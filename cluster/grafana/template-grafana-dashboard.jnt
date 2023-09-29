@@ -4,6 +4,9 @@ function(username) {
   metadata: {
     name: 'grafana-' + username + '-tools',
     namespace: username + '-tools',
+    annotations: {
+      'argocd.argoproj.io/sync-wave': '10',
+    },
   },
   spec: {
     instanceSelector: {

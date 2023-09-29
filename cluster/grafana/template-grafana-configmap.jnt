@@ -4,6 +4,9 @@ function(username) {
   metadata: {
     name: 'cnp-dashboard-definition-' + username + '-tools',
     namespace: username + '-tools',
+    annotations: {
+      'argocd.argoproj.io/sync-wave': '10',
+    },
   },
   data: {
     'cnp.json': |||
@@ -5662,8 +5665,8 @@ function(username) {
             {
               "current": {
                 "selected": false,
-                "text": "database",
-                "value": "database"
+                "text": "",
+                "value": ""
               },
               "datasource": {
                 "type": "prometheus",
@@ -5688,8 +5691,8 @@ function(username) {
             {
               "current": {
                 "selected": false,
-                "text": "database-clustermarket-database",
-                "value": "database-clustermarket-database"
+                "text": "",
+                "value": "",
               },
               "datasource": {
                 "type": "prometheus",

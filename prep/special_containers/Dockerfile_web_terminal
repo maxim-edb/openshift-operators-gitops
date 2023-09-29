@@ -1,0 +1,28 @@
+FROM registry.redhat.io/web-terminal/web-terminal-tooling-rhel8:1.8-2
+
+USER 0
+
+RUN curl -LO https://github.com/EnterpriseDB/kubectl-cnp/releases/download/v1.20.2/kubectl-cnp_1.20.2_linux_x86_64.rpm 
+RUN stat kubectl-cnp_1.20.2_linux_x86_64.rpm && rpm -ivh kubectl-cnp_1.20.2_linux_x86_64.rpm && rm kubectl-cnp_1.20.2_linux_x86_64.rpm 
+
+USER 1001
+ENV SHELL /bin/bash
+ENTRYPOINT [ "/entrypoint.sh" ]
+
+ENV SUMMARY="Web Terminal - Tooling container w/ CNPG plugin" \
+    DESCRIPTION="Web Terminal - Tooling container w/ CNPG plugin" \
+    PRODNAME="web-terminal" \
+    COMPNAME="tooling"
+
+LABEL summary="$SUMMARY" \
+      description="$DESCRIPTION" \
+      io.k8s.description="$DESCRIPTION" \
+      io.k8s.display-name="$DESCRIPTION" \
+      io.openshift.tags="$PRODNAME,$COMPNAME" \
+      com.redhat.component="$PRODNAME-$COMPNAME-container" \
+      name="$PRODNAME/$COMPNAME" \
+      version="1.8" \
+      license="EPLv2" \
+      maintainer="Maxim Burgerhout <maxim@enterprisedb.com>" \
+      io.openshift.expose-services="" \
+      usage=""

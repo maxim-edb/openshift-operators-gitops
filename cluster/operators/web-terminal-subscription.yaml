@@ -1,12 +1,13 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: openshift-pipelines-operator
+  name: web-terminal
   namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
-  channel: latest
+  channel: fast
   installPlanApproval: Automatic
-  name: openshift-pipelines-operator-rh
+  name: web-terminal
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV:  openshift-pipelines-operator-rh.v1.11.1
