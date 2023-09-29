@@ -58,7 +58,7 @@ function(username) {
         },
         volumes: [
           {
-            name: 'pgadmin4-volume',
+            name: 'pgadmin4-' + username + '-tools-volume',
             persistentVolumeClaim: {
               claimName: 'pgadmin4-' + username + '-tools-pvc',
             },
