@@ -3,6 +3,7 @@ function(username) {
   kind: 'PersistentVolumeClaim',
   metadata: {
     name: 'pgadmin4-' + username + '-tools-pvc',
+    namespace: username + '-tools',
   },
   spec: {
     accessModes: [
