@@ -11,4 +11,3 @@ spec:
   name: cloud-native-postgresql
   source: certified-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: cloud-native-postgresql.v1.20.2
