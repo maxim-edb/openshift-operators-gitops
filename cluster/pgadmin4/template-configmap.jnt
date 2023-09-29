@@ -7,6 +7,6 @@ function(username) {
   },
   data: {
     'servers.json':
-      std.format('{"Servers": {"1": {"Name": "PostgreSQL DB", "Group": "Servers", "Port": 5432, "Username": "postgres", "Host": "complex-cluster-rw.%s.svc.cluster.local", "SSLMode": "prefer", "MaintenanceDB": "postgres"}}}', [username]),
+      std.format('{"Servers": {"1": {"Name": "PostgreSQL DB", "Group": "Servers", "Port": 5432, "Username": "postgres", "Host": "complex-cluster-rw.%s-tools.svc.cluster.local", "SSLMode": "prefer", "MaintenanceDB": "postgres"}}}', [username]),
   },
 }
