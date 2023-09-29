@@ -11,3 +11,5 @@ spec:
     path: cluster/apps/dba
     repoURL: https://github.com/maxim-edb/cluster-config.git
     targetRevision: rosa
+  syncPolicy:
+    automated: {}
