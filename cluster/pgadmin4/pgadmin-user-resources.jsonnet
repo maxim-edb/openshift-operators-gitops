@@ -3,6 +3,7 @@ local configmapTemplate = import 'template-configmap.jnt';
 local deploymentTemplate = import 'template-deployment.jnt';
 local pvcTemplate = import 'template-pvc.jnt';
 local routeTemplate = import 'template-route.jnt';
+local secretTemplate = import 'template-secret.jnt';
 local serviceTemplate = import 'template-service.jnt';
 
 local generateUserResources(username) = [
@@ -12,6 +13,7 @@ local generateUserResources(username) = [
   pvcTemplate(username),
   routeTemplate(username),
   serviceTemplate(username),
+  secretTemplate(username),
 ];
 
 [
