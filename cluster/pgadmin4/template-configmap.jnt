@@ -14,7 +14,7 @@ function(username) {
               "Group": "Servers",
               "Port": 5432,
               "Username": "postgres",
-              "Host": "complex-cluster-rw.||| + username + |||.svc.cluster.local",
+              "Host": "complex-cluster-rw." + username + "svc.cluster.local",
               "SSLMode": "prefer",
               "MaintenanceDB": "postgres"
             }
