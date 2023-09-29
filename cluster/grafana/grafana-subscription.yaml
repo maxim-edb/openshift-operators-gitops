@@ -3,10 +3,11 @@ kind: Subscription
 metadata:
   name: grafana-operator
   namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: v5
   installPlanApproval: Automatic
   name: grafana-operator
   source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: grafana-operator.v5.4.1

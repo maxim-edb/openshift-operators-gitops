@@ -4,6 +4,9 @@ function(username) {
   metadata: {
     name: 'prometheus-grafanadatasource-' + username,
     namespace: username + '-tools',
+    annotations: {
+      'argocd.argoproj.io/sync-wave': '30',
+    },
   },
   spec: {
     datasource: {

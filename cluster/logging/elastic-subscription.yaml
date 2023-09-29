@@ -3,10 +3,11 @@ kind: Subscription
 metadata:
   name: elasticsearch-operator
   namespace: openshift-operators-redhat
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: stable
   installPlanApproval: Automatic
   name: elasticsearch-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: elasticsearch-operator.v5.7.6
