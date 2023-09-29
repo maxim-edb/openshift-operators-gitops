@@ -4,6 +4,9 @@ function(username) {
   metadata: {
     name: 'cluster-monitoring-view-' + username + '-tools',
     namespace: username + '-tools',
+    annotations: {
+      argocd.argoproj.io/sync-wave: "5",
+    },
   },
   roleRef: {
     apiGroup: 'rbac.authorization.k8s.io',
