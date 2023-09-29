@@ -5665,8 +5665,8 @@ function(username) {
             {
               "current": {
                 "selected": false,
-                "text": "",
-                "value": ""
+                "text": "database",
+                "value": "database"
               },
               "datasource": {
                 "type": "prometheus",
@@ -5691,8 +5691,8 @@ function(username) {
             {
               "current": {
                 "selected": false,
-                "text": "",
-                "value": "",
+                "text": "database-clustermarket-database",
+                "value": "database-clustermarket-database"
               },
               "datasource": {
                 "type": "prometheus",
