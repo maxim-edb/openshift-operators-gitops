@@ -8,6 +8,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   project: default
+  source:
     path: cluster/apps/dba
     repoURL: https://github.com/maxim-edb/cluster-config.git
     targetRevision: rosa
