@@ -8,6 +8,7 @@ rules:
   - postgresql.k8s.enterprisedb.io
   resources:
   - clusters/status
+  - clusters/scale
   verbs:
   - update
   - patch
