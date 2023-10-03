@@ -14,7 +14,7 @@ function(username) {
     {
       apiGroup: 'rbac.authorization.k8s.io',
       kind: 'User',
-      name: username + '-tools',
+      name: username,
     },
   ],
 }
