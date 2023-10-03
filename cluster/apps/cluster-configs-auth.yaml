@@ -13,6 +13,6 @@ spec:
       recurse: true
     path: cluster/auth
     repoURL: https://github.com/maxim-edb/cluster-config.git
-    targetRevision: rosa
+    targetRevision: aws
   syncPolicy:
     automated: {}
