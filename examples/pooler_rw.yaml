@@ -1,0 +1,20 @@
+apiVersion: postgresql.k8s.enterprisedb.io/v1
+kind: Pooler
+metadata:
+  name: pooler-rw
+spec:
+  cluster:
+    name: complex-cluster
+  instances: 1
+  type: rw
+  template:
+    metadata:
+      labels:
+        app: pooler
+    spec:
+      containers: []
+  pgbouncer:
+    poolMode: session
+    parameters:
+      max_client_conn: "1000"
+      default_pool_size: "10"
