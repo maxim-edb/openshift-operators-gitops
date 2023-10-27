@@ -16,6 +16,6 @@ local generateUserResources(username) = [
 
 [
   userResources
-  for userNumber in std.range(1, 15)
+  for userNumber in std.range(1, 5)
   for userResources in generateUserResources('edbuser%02d' % userNumber)
 ]
