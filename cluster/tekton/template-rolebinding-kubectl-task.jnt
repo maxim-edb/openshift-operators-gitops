@@ -1,20 +1,20 @@
 function(username) {
   apiVersion: 'rbac.authorization.k8s.io/v1',
-  kind: 'RoleBinding',
+  kind: 'ClusterRoleBinding',
   metadata: {
-    name: 'admin',
+    name: 'allow-kubectl-in-tekton' + username + '-tools',
     namespace: username + '-tools',
   },
   roleRef: {
     apiGroup: 'rbac.authorization.k8s.io',
     kind: 'ClusterRole',
-    name: 'admin',
+    name: 'allow-kubectl-in-tekton',
   },
   subjects: [
     {
-      apiGroup: 'rbac.authorization.k8s.io',
-      kind: 'User',
-      name: username,
+      kind: 'ServiceAccount',
+      name: 'pipeline',
+      namespace: username + '-tools'
     },
   ],
 }

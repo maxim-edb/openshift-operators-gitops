@@ -9,7 +9,7 @@ function(username) {
     {
       kind: 'User',
       apiGroup: 'rbac.authorization.k8s.io',
-      name: username + '-tools',
+      name: username,
     },
   ],
   roleRef: {

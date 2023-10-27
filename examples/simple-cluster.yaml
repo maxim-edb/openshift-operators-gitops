@@ -1,0 +1,21 @@
+apiVersion: postgresql.k8s.enterprisedb.io/v1
+kind: Cluster
+metadata:
+  name: simple-cluster
+spec:
+  bootstrap:
+    initdb:
+      database: app
+      encoding: UTF8
+      localeCType: C
+      localeCollate: C
+      owner: app
+  imageName: 'quay.io/enterprisedb/postgresql:15.2'
+  enableSuperuserAccess: true
+  instances: 3
+  monitoring:
+    enablePodMonitor: false
+  storage:
+    resizeInUseVolumes: true
+    size: 1Gi
+  primaryUpdateMethod: switchover
