@@ -13,6 +13,6 @@ spec:
       recurse: true
     path: cluster/logging
     repoURL: https://github.com/maxim-edb/cluster-config.git
-    targetRevision: aws
+    targetRevision: dev
   syncPolicy:
     automated: {}

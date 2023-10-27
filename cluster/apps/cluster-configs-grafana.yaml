@@ -11,6 +11,6 @@ spec:
   source:
     path: cluster/grafana
     repoURL: https://github.com/maxim-edb/cluster-config.git
-    targetRevision: aws
+    targetRevision: dev
   syncPolicy:
     automated: {}
