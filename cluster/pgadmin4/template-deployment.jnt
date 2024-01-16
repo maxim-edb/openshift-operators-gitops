@@ -26,7 +26,7 @@ function(username) {
             env: [
               {
                 name: 'PGADMIN_DEFAULT_EMAIL',
-                value: 'root@localhost.net',
+                value: 'sergio@enterprisedb.com',
               },
               {
                 name: 'PGADMIN_DEFAULT_PASSWORD',
