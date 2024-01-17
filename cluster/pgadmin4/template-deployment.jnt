@@ -17,7 +17,7 @@ function(username) {
         containers: [
           {
             name: 'pgadmin4',
-            image: 'quay.io/wzzrd/pgadmin4:latest',
+            image: 'docker.io/dpage/pgadmin4:8.2',
             ports: [
               {
                 containerPort: 80,
@@ -26,7 +26,7 @@ function(username) {
             env: [
               {
                 name: 'PGADMIN_DEFAULT_EMAIL',
-                value: 'sergio@enterprisedb.com',
+                value: 'root@localhost.net',
               },
               {
                 name: 'PGADMIN_DEFAULT_PASSWORD',
