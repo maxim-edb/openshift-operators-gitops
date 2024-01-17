@@ -71,8 +71,10 @@ spec:
   storage:
     resizeInUseVolumes: true
     size: 1Gi
+    storageClass: gp3-csi
   walStorage:
     size: 512Mi
+    storageClass: gp3-csi
   switchoverDelay: 40000000
   replicationSlots:
     highAvailability:

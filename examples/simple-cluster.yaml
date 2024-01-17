@@ -18,4 +18,5 @@ spec:
   storage:
     resizeInUseVolumes: true
     size: 1Gi
+    storageClass: gp3-csi
   primaryUpdateMethod: switchover
